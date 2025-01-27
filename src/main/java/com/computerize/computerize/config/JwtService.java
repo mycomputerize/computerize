@@ -21,8 +21,7 @@ public class JwtService {
 
     public <T> T getClaim(String token, Function<Claims, T> claimsResolver){
         final Claims claims = getClaims(token);
-        return claimsResolver.apply(claims)git status
-                ;
+        return claimsResolver.apply(claims) ;
     }
 
     private Claims getClaims(String token){
