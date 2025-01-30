@@ -7,10 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Optional;
-
 @RestController
-@RequestMapping("/crm/v1/cusomter")
+@RequestMapping("/crm/v1/customer")
 @RequiredArgsConstructor
 public class CustomerController {
 
@@ -21,10 +19,10 @@ public class CustomerController {
     * */
 
 
-    public final CustomerService customerService;
+    private final CustomerService customerService;
 
     @GetMapping("/{customerId}")
-    public void getCustomerById(@PathVariable Long customerId){
-//        return CustomerService.fetchCustomerById(customerId);
+    public int getCustomerById(@PathVariable Long customerId){
+        return customerService.fetchCustomerById(customerId);
     }
 }

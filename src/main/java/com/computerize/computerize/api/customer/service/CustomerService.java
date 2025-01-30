@@ -11,5 +11,6 @@ public class CustomerService {
     private final DSLContext jooq;
 
     public int fetchCustomerById(Long customerId){
+        return 0;
     }
 }
